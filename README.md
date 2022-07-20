@@ -1,42 +1,8 @@
-# Nuxt 3 Minimal Starter
-
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
-
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
-```
-
-## Development Server
-
-Start the development server on http://localhost:3000
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/guide/deploy/presets) for more information.
+# Nuxt3 入門
+## YouTube用のサンプルコード
+### 学習内容
+1. Nuxt3とは 
+1. Nuxt3を使った新規プロジェクトの立ち上げ　
+　　app.vue pagesディレクトリの説明動画
+1. NuxtLinkについて　Vue3のコンポーネントの基本ルール 
+1. meta情報の追加方法・faviconの設定・Bootstrapの導入
