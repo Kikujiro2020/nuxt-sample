@@ -6,3 +6,5 @@ node_modules
 .output
 .env
 dist
+pages/404.vue
+public/notfound2.png
