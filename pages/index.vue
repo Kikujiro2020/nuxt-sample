@@ -9,6 +9,6 @@
 <script setup>
 // This will also work in `<script setup>`
 definePageMeta({
-  layout: "sample",
+  layout: "default",
 });
 </script>
