@@ -6,5 +6,6 @@
 　　app.vue pagesディレクトリの説明動画
 1. NuxtLinkについて　Vue3のコンポーネントの基本ルール 
 1. meta情報の追加方法・faviconの設定・Bootstrapの導入
+1. componentsディレクトリについて
 #### Next
 - Layoutについて
