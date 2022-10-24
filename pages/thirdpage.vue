@@ -1,6 +1,8 @@
 <script setup>
 const { counter, inc, dec } = useCounter()
-
+definePageMeta({
+  middleware: 'auth',
+})
 </script>
 
 <template>
