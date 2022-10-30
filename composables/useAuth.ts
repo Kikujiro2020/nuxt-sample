@@ -1,13 +1,34 @@
 import {
     getAuth,
+    createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
-    signOut as firebaseSignOut,
+    signOut,
     onAuthStateChanged,
   } from 'firebase/auth'
   
   export const useAuth = () => {
+    //トークンを初期化
     const token = useState<string>('token', () => null)
-  
+    
+    //サインアップ処理
+    async function signUp(email:string, password:string){
+      
+      return new Promise((resolve)=>{
+        const auth = getAuth()
+          createUserWithEmailAndPassword(auth, email, password)
+          .then((userCredential) => {
+              // サインアップ
+              const currentUser = userCredential.user;
+              resolve("success")
+          })
+          .catch((error) => {
+              const errorCode = error.code;
+              const errorMessage = error.message;
+              resolve(errorCode)
+          });            
+      })
+  }  
+    //サインイン処理
     async function signIn(email: string, password: string) {
       return await new Promise<void>((resolve, reject) => {
         const auth = getAuth()
@@ -25,10 +46,10 @@ import {
       })
     }
   
-    async function signOut() {
+    async function logOut() {
       return await new Promise<void>((resolve, reject) => {
         const auth = getAuth()
-        firebaseSignOut(auth)
+        signOut(auth)
           .then(() => {
             token.value = null
             resolve()
@@ -68,8 +89,9 @@ import {
     }
   
     return {
+      signUp,
       signIn,
-      signOut,
+      logOut,
       token,
       checkAuthState,
     }

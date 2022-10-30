@@ -1,7 +1,8 @@
 
 
 export default defineNuxtRouteMiddleware(async () => {
-    if (!process.server) {
+    if (!process.server) { 
+      //CSRでの処理
       const { checkAuthState, token } = useAuth()
       await checkAuthState()
       if (!token.value) {
