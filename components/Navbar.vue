@@ -1,8 +1,9 @@
 <script setup>
-const {logOut} = useAuth();
+const {logOut,errorMessage} = useAuth();
 
-function signOut(){
-logOut();
+async function signOut(){
+await logOut();
+console.log(errorMessage.value);
 }
 
 </script>
@@ -21,6 +22,7 @@ logOut();
                         <NuxtLink class="nav-link" activeClass="active" to="/thirdpage">Thirdpage Composables sample</NuxtLink>
                         <NuxtLink class="nav-link" activeClass="active" to="/fishdata">Fishdata</NuxtLink>
                         <NuxtLink class="nav-link" activeClass="active" to="/signup">SignUp</NuxtLink>
+                        <NuxtLink class="nav-link" activeClass="active" to="/login">Login</NuxtLink>
                         <button type="button" class="btn btn-outline-secondary" @click="signOut">LogOut</button>
 
                     </div>

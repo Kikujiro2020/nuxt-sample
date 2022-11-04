@@ -1,13 +1,14 @@
 
-
+//ルートごとの認証チェック処理
 export default defineNuxtRouteMiddleware(async () => {
     if (!process.server) { 
       //CSRでの処理
-      const { checkAuthState, token } = useAuth()
+      const { checkAuthState , user } = useAuth()
       await checkAuthState()
-      if (!token.value) {
+      console.log(user.value.uid)
+      if (!user) {
         // replaceで遷移
-        return await navigateTo('/login', { replace: true })
+        return navigateTo('/signup', { replace: true })
       }
     }
   })
