@@ -5,8 +5,9 @@ export default defineNuxtRouteMiddleware(async () => {
       //CSRでの処理
       const { checkAuthState , user } = useAuth()
       await checkAuthState()
-      
-      if (!user) {
+     
+
+      if (!user.value) {
         // replaceで遷移
         return navigateTo('/signup', { replace: true })
       }
