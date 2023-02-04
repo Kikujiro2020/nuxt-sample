@@ -9,7 +9,7 @@ export default defineNuxtRouteMiddleware(async () => {
 
       if (!user.value) {
         // replaceで遷移
-        return navigateTo('/signup', { replace: true })
+        return navigateTo('/login', { replace: true })
       }
     }
   })
